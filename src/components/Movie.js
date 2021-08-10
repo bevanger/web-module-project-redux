@@ -11,7 +11,8 @@ const Movie = (props) => {
     const movie = movies.find(movie=>movie.id===Number(id));
 
     const handleDeleteMovie = (id) => {
-        props.deleteMovie(id);
+        props.deleteMovie(parseInt(id))
+        push("/movies")
     }
     
     return(<div className="modal-page col">
@@ -49,7 +50,7 @@ const Movie = (props) => {
                                 type="button" 
                                 className="m-2 btn btn-danger" 
                                 value="Delete" 
-                                onClick={() => {handleDeleteMovie()}}
+                                onClick={() => {handleDeleteMovie(id)}}
                                 />
                             </span>
                         </section>
